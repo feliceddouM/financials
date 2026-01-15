@@ -1,0 +1,55 @@
+# 排除大型財報 HTML 資料夾
+tifrs-2025Q1/
+tifrs-2025Q2/
+tifrs-2025Q3/
+tifrs-2025Q4/
+tifrs-2024Q*/
+tifrs-2025Q*/
+tifrs-*/
+
+# 排除輸出的 CSV 檔案（可以重新產生）
+POC-tifrs-2025Q2/financial_metrics_*.csv
+POC-tifrs-2025Q2/missing_companies.csv
+
+# 排除 macOS 系統檔案
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 排除縮圖
+._*
+
+# 排除暫存檔
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# 排除 Python 相關
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# 排除 IDE 設定檔
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 排除 Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# 排除日誌檔案
+*.log
+
+# 如果有壓縮檔也排除
+*.zip
+*.tar.gz
+*.rar
