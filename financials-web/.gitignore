@@ -1,0 +1,25 @@
+# 資料庫（可能較大，建議不加入 git）
+data/financials.db
+
+# 中間產出 CSV
+financial_metrics_*.csv
+
+# Python 快取
+__pycache__/
+*.pyc
+*.pyo
+
+# Streamlit 快取
+.streamlit/
+
+# 虛擬環境
+venv/
+.venv/
+env/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
