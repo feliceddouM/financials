@@ -366,7 +366,7 @@ def load_whitelist(csv_path):
     for enc in ('big5', 'cp950', 'utf-8'):
         try:
             df = pd.read_csv(csv_path, encoding=enc)
-            ids = set(df['公司代號'].astype(str).str.strip())
+            ids = set(df['company_id'].astype(str).str.strip())
             print(f'[名單] 讀取 {len(ids)} 家 ({enc})')
             return ids
         except Exception:
@@ -444,10 +444,9 @@ def run_batch(folder_path, csv_path, out_path):
     print(f'輸出: {out_path}')
 
 
-# ── 入口 ──────────────────────────────────────────────
+# ── 設定路徑（改成你的實際路徑）──
+CSV_PATH = 't163sb04_20251218_15322930.csv'   # 公司名單
+DIR_PATH = '../tifrs-2025Q3'                   # HTML 財報資料夾
+OUT_PATH = 'financial_metrics_2025Q3.csv'  # 輸出
 
-if __name__ == '__main__':
-    csv_arg = sys.argv[1] if len(sys.argv) > 1 else 't163sb04_20251218_15322930.csv'
-    dir_arg = sys.argv[2] if len(sys.argv) > 2 else '../tifrs-2025Q3'
-    out_arg = sys.argv[3] if len(sys.argv) > 3 else 'financial_metrics_2025Q3_new.csv'
-    run_batch(dir_arg, csv_arg, out_arg)
+run_batch(DIR_PATH, CSV_PATH, OUT_PATH)
