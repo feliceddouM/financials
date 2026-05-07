@@ -1,31 +1,36 @@
 # 台股基本面選股器
 
-AI-powered台灣股市基本面篩選工具，幫助投資者找出被低估的優質公司。
+自動化財報分析工具，從955家上市櫃公司中篩選「體質好且被低估」的投資標的。
 
-## 核心功能
+## 功能
 
-- **財報搶先看**：每日追蹤MOPS新上傳的年報，AI自動分析亮點
-- **Quality + Value選股**：結合獲利品質與估值優勢，篩選出值得關注的股票
-- **AI智能分析**：自動標註財報異常訊號與投資機會
+- **財報自動處理**：從MOPS解析XBRL格式季報，提取20+財務指標
+- **ROE計算**：自動計算股東權益報酬率
+- **股價整合**：整合即時股價與本益比
+- **智慧篩選**：Quality + Value策略，結合產業benchmark分析
+- **AI評分**：自動標註改善幅度大的公司（⭐⭐⭐/⭐⭐）
+
+## 使用
+
+```bash
+# 1. 執行財報解析
+python src/parse_mops_reports.py
+
+# 2. 打開Jupyter Notebook
+jupyter notebook notebooks/stock_screening.ipynb
+
+# 3. 執行所有cells，查看篩選結果
+```
 
 ## 技術架構
 
-- **Backend**: Python + FastAPI
-- **Frontend**: React + Vite + Tailwind CSS
-- **Database**: SQLite (MVP) → PostgreSQL
-- **AI**: Claude API
-- **Data Source**: MOPS XBRL財報 + 台灣證交所股價
+- **資料處理**：Python + pandas + BeautifulSoup4
+- **股價資料**：yfinance API
+- **分析工具**：Jupyter Notebook
+- **選股策略**：產業相對估值 + 財務品質篩選
 
-## 專案文件
+## 成果
 
-- [選股判斷標準](./docs/選股判斷標準.md) - Quality + Value策略邏輯與篩選條件
-- [系統架構](./docs/Architecture.md) - 完整技術架構與開發規劃
-
-## 開發狀態
-
-🚧 開發中 - 預計2026年3月底完成MVP
-
----
-
-**作者**: Felice Dou  
-**目的**: AI Product Manager Portfolio Project
+- 涵蓋955家上市櫃公司（94%覆蓋率）
+- 自動篩選出10-15%符合Quality+Value標準的標的
+- 從手動查詢半天 → 自動化3分鐘
