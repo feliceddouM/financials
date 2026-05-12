@@ -60,3 +60,5 @@ financials-web/start.py
 # 排除 SQLite 資料庫（可由資料管道重新產生）
 financials-web/data/financials.db
 financials-web/data/*.db
+data/processed/
+data/raw/*.csv
